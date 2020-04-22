@@ -199,7 +199,7 @@ class LocalSpeechRecognition implements Runnable {
     boolean cancelled;
 
     int mMinimumVoice = 150;
-    int mMaximumSilence = 500;
+    int mMaximumSilence = 1500;
     int mUpperLimit = 10;
 
     static final int FRAME_SIZE = 80;
@@ -358,6 +358,9 @@ class LocalSpeechRecognition implements Runnable {
     }
 
     public static String getModelDownloadURL(String aLang) {
-        return kBaseModelURL + aLang + ".zip";
+        if(aLang.equals("en-us")){
+            return "https://github.com/viniciusrsouza/androidspeech/releases/download/1.0/en-us.zip";
+        }
+        else return "";
     }
 }

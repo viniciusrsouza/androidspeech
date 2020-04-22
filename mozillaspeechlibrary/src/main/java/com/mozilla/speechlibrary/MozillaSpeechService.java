@@ -139,7 +139,9 @@ public class MozillaSpeechService {
     }
 
     public String getModelDownloadURL() {
-        return LocalSpeechRecognition.getModelDownloadURL(this.getLanguageDir());
+        String result = LocalSpeechRecognition.getModelDownloadURL(this.getLanguageDir());
+        Log.d("DownloadModel", "URL: " + result);
+        return result;
     }
 
     public void setProductTag(String tag) {
